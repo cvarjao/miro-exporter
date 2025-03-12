@@ -97,7 +97,7 @@ await page.setViewport({width: 1200, height: 1024});
 await page.waitForSelector('::-p-xpath(//div[@data-testid="user-switcher__root"])', {timeout: 120_000})
 
 
-await page.goto('https://miro.com/api/v1/boards/?fields=id%2Ctitle&filter=OWNER&sort=LAST_OPENED&offset=0&limit=400');
+await page.goto('https://miro.com/api/v1/boards/?fields=id%2Ctitle&filter=OWNER&sort=LAST_CREATED&offset=0&limit=400');
 
 const bodyHandle = await page.$('body');
 const boards = JSON.parse(await page.evaluate(body => body?.innerText, bodyHandle) as string);
